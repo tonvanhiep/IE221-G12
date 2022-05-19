@@ -1,0 +1,78 @@
+.row1{
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.row2{
+    width: fit-content;
+    text-align: right;
+    float: right;
+}
+
+#thongtin {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;  
+    margin: auto;
+    width: 700px;
+    height: 580px;
+    background-color: rgba(211, 211, 211, 0.564);
+    color: black;
+    font-size: 20px;
+}
+
+.form-control{
+    height: 35px;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    outline: 0px;
+}
+
+.form-group {
+    padding-bottom: 10px;
+}
+
+.duongke {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.input{
+    float: right;
+    font-size: 20px;
+    color: white;
+    background:#8B7355;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.input:hover{
+    transition: all 0.5s ease-in-out;
+    background: black;
+    font-weight: bold;
+    color: white;
+}
+
+
+table{
+    border: none;
+}
+
+#content {
+    padding-bottom: 30px    ;
+}
+
+#thanks {
+    display: block;
+    width: 100vw;
+    height: 250px;
+    text-align: center;
+    padding-top: 50px;
+}

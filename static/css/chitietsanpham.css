@@ -1,0 +1,279 @@
+#content {
+    height: fit-content;
+    padding-bottom: 50px;
+}
+
+#div-tdc {
+    padding-left: 25px;
+}
+
+#div-tdc a:hover {
+    text-decoration: underline;
+}
+
+.tdc {
+    display: inline;
+    padding-left: 5px;
+    padding-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+#chitietsp {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#header-chitiet {
+    padding-bottom: 20px;
+    height: fit-content;
+    vertical-align:top;
+    display:inline-table;
+}
+
+#header-noidung {
+    max-width: 600px;
+    padding-left: 50px;
+    display:table-cell;
+    vertical-align: top;
+}
+
+
+#div-anh-sp {
+    width: 600px;
+    display: table-cell;
+}
+
+#div-anh-sp img {
+    width: 100%;
+}
+
+
+#ten-sp {
+    font-size: 46px;
+}
+
+#gia-sp {
+    font-size: 30px;
+}
+
+#div-tuychon {
+    padding-bottom: 10px;
+}
+
+.luachon {
+    border-radius: 50px;
+    border-style: solid;
+    border-color:#8B7355;
+    border-width: 2px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.luachon:hover {
+    border-style: solid;
+    border-color:green;
+    border-width: 2px;
+    height: 32px;
+    width: 32px;
+}
+
+#sel-kichthuoc, #sel-mausac {
+    width: 100%;
+}
+
+
+#gosoi {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNsPXkvJKqzI2qCWW7Rq68BnZnj-Ek1Y7A6DmEcOlQxjUlKAVQE2u27kIKvJ7Vj6zouwI&usqp=CAU");
+}
+
+#gooccho {
+    background-image: url("https://noithatgooccho.net.vn/wp-content/uploads/2020/10/go-oc-cho-co-mau-nhu-the-nao-1-1.jpg");
+}
+
+#gocaosu {
+    background-image: url("http://khovansan.com/wp-content/uploads/2016/10/go-cao-su-ghep-thanh.jpg");
+}
+
+#btn-mh {
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#btn-tvgh, #btn-mn {
+    display: inline-block;
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: dimgray;
+    font-size: 18px;
+    background-color: dimgray;
+    cursor: pointer;
+}
+
+#btn-tvgh:hover, #btn-mn:hover {
+    color: white;
+    background:#8B7355;
+    border-color: #8B7355;
+}
+
+
+#danhmuc {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+}
+
+#mota-sp {
+    text-align: justify;
+    padding-top: 10px;
+}
+
+#mota, #danhgia {
+    padding-right: 30px;
+    height: 50px;
+    background: none;
+    font-size: 20px;
+    border-style: none;
+    cursor: pointer;
+}
+
+#mota {
+    text-decoration: underline;
+}
+
+#danhgia {
+    color: darkgray;
+}
+
+
+#danhgia-sp {
+    padding-top: 20px;
+    display: none;
+}
+
+#dgsp {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#themdanhgia {
+    padding-top: 20px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+#hoten, #email, #baidanhgia {
+    padding-left: 15px;
+    width: 700px;
+    height: 50px;
+    display: block;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 18px;
+    background: none;
+    border-color: #8B7355;
+}
+
+#baidanhgia {
+    padding-left: 15px;
+    width: 700px;
+    min-height: 150px;
+    display: block;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 18px;
+    background: none;
+    border-width: 2px;
+    border-color: #8B7355;
+}
+
+#hoten:focus, #email:focus, #baidanhgia:focus {
+    outline: 2px;
+}
+
+#submit-danhgia {
+    width: 700px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #8B7355;
+}
+
+#submit-danhgia:hover {
+    background-color: #8B7355;
+    color: white;
+}
+
+.form {
+    padding-top: 10px;
+}
+
+.comment {
+    padding-top: 20px;
+}
+
+.ava-danhgia {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.ava-danhgia img {
+    width: 100%;
+    height: 100%;
+}
+
+.tt-danhgia {
+    padding-left: 15px;
+    display: inline-block;
+}
+
+.nd-danhgia {
+    padding-left: 65px;
+}
+
+
+
+#tvgh-tc {
+    width: 450px;
+    background-color: #00fa1d;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    border-radius: 5px;
+    opacity: 0.8;
+    display: none;
+}
+
+#tvgh-tc p {
+    padding-left: 20px;
+}
+
+
+
+
+
+
+
+#sptuongtu {
+    padding-top: 10px;
+    width: 100vw;
+    text-align: center;
+    font-size: 30px;
+    /* font-weight: bold; */
+}

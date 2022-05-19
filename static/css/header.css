@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo 2', cursive;
+}
+
+body{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    background-color: #CDAA7D;
+}
+
+header {
+    width:100%;
+    height: 70px;
+    background-color: #8B7355;
+}
+
+#lhead img {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    top: 5px;
+    left: 40px;
+}
+
+.icon-header {
+    height: 20px;
+    width: 20px;
+}
+
+#lhead nav {
+    display: inline;
+    position: absolute;
+    top: 25px;
+    left: 120px;
+}
+
+#lhead h1 {
+    display: inline;
+}
+
+#lhead nav {
+    display: inline;
+}
+
+#lhead ul {
+    display: inline;
+}
+
+#lhead ul li {
+    list-style-type: none;
+    display: inline;
+    margin-left: 20px;
+  
+}
+
+#lhead ul li a {
+    color: white;
+    font-weight:500;
+    font-size: 18px;
+    text-decoration:none;
+}
+
+#rhead {
+    display: inline;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+}
+
+#rhead ul {
+    display: inline;
+}
+
+#rhead ul li {
+    list-style-type: none;
+    display: inline;
+    margin-left: 20px;
+}
+
+.sub-menu li {
+    display: block;
+}
+
+.sub-menu {
+    display: block;
+    position: absolute;
+    top: 25px;
+}
+
+
+
+
+
+
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    color: white;
+    font-weight: bold;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8B7355;
+    min-width: 140px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 15px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #CDAA7D;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+#sosp {
+    width: 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: aliceblue;
+    text-align: center;
+    position: absolute;
+    top: -18px;
+    right: -12px;
+    vertical-align:middle;
+    display:inline-table;
+}
+
+
+#timkiem {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: 0.9;
+    display: none;
+    z-index: 1;
+}
+
+#close-search {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    cursor: pointer;
+    font-size: 40px;
+    background: none;
+}
+
+#close-search:hover {
+    font-weight: bolder;
+}
+
+#timkiem p {
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+#div-input {
+    width: 100%;
+    height: fit-content;
+    border-bottom: solid;
+    padding-bottom: 10px;
+}
+
+#input-search {
+    width: 90%;
+    height: 50px;
+    padding-left: 30px;
+    font-size: 20px;
+    background: none;
+    border-style: none;
+}
+
+#input-search:focus {
+    background: none;
+    outline: 0;
+}
+
+#submit-search {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    background:none;
+    border-style: none;
+    cursor: pointer;
+}
+
+#submit-search:hover {
+    font-weight: bolder;
+}

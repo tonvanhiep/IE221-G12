@@ -1,0 +1,169 @@
+.input{
+    width: 50px;
+    height: 50px;
+    background-color: #8B7355;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+
+button{
+    border: none;
+    background-color: none;
+    height: 50px;
+    width: 50px;
+}
+
+.row3{
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.TTMua{
+    float: left;
+    border-style: none;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 20px;
+    background-color: #8B7355;
+    color: white;
+    cursor: pointer;
+}
+
+.DatHang{
+    float: right;
+    border-style: none;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 20px;
+    background-color: #8B7355;
+    color: white;
+    cursor: pointer;
+}
+
+.TTMua:hover, .DatHang:hover {
+    transition: all 0.5s ease-in-out;
+    background: black;
+    font-weight: bold;
+    color: white;
+}
+
+
+#giohang {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+#sp-gh {
+    width: 100%;
+}
+
+#xoa {
+    width: 7%;
+    height: 60px;
+}
+#sp {
+    width: 40%;
+    text-align: left;
+}
+#dg {
+    width: 16%;
+}
+#sl {
+    width: 21%;
+}
+#st {
+    width: 16%;
+}
+
+.anh-sp {
+    width: 15%;
+}
+.anh-sp img {
+    width: 100%;
+    height: auto;
+}
+.xoa-sp {
+    text-align: center;
+}
+.ten-sp {
+    padding-left: 10px;
+}
+.gia-sp {
+    text-align: right;
+    font-size: 20px;
+}
+
+.sl-sp {
+    text-align: center;
+}
+
+.sotien-sp {
+    text-align: right;
+    font-size: 20px;
+}
+
+.div-xoa-sp {
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    text-align: center;
+    border-width: 2px;
+    font-weight: bold;
+    border-style: solid;
+    background: none;
+}
+.div-xoa-sp:hover {
+    background: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#tongcong {
+    text-align: right;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#sp-gh, #sp-gh th, #sp-gh td{
+    border-bottom: 2px solid #8B7355;
+    vertical-align:middle;
+    padding-top: 10px;
+}
+#sp-gh {
+    border-collapse:collapse;
+}
+
+
+.btn-g, .btn-t {
+    background-color: #fff;
+    color: black;
+    height: 40px;
+    border-radius: 0px;
+    width: 30px;
+    font-size: 20px;
+}
+
+.btn-g:hover, .btn-t:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.input-sl {
+    width: 50px;
+    height: 40px;
+    border-radius: 0px;
+    background-color: #fff;
+    color: black;
+    font-size: 20px;
+}

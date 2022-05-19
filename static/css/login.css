@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo 2', cursive;
+}
+
+body {
+    width: 100vw;
+    height: fit-content;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.7;
+    background-color: #CDAA7D;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.form-control {
+    height: 40px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 5px;
+    border-style: none;
+    padding-left: 10px;
+}
+
+.form-control:focus {
+    outline: 0px;
+}
+
+.submit1 {
+    color: white;
+    background: #8B7355;
+    width: 200px;
+    height: 45px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.submit1:hover{
+    transition: all 0.5s ease-in-out;
+    background: black;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+.contain a{
+    color: black;
+}
+
+.contain a:hover, .contain a:active, .contain a:focus{
+    transition: 0.3s ease-in-out;
+    color: white;
+}
+
+.logo{
+    padding-top: 5px;
+    display: block;
+    height: fit-content;
+    width: 100vw;
+}
+
+.logo img{
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+#login {
+    padding-top: 15px;
+    font-size: 60px;
+}
