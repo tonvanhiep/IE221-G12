@@ -1,0 +1,50 @@
+{% extends "pages/base.html" %}
+
+
+{% block title %}
+    <title>Tất cả sản phẩm | Furniture | Nội thất phong cách Việt Nam</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/stylee.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/sanpham.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+{% endblock %}
+
+
+{% block content %}
+    <div id="content">
+        <div id="div-tdc">
+            <a class="tdc" href="{% url 'home' %}">Trang chủ</a>
+            <p class="tdc">></p>
+            <a class="tdc" href="{% url 'allsanpham' %}">Sản phẩm</a>
+        </div>
+        <p id="tsp">Sản phẩm</p>
+
+        <hr  width="100%" color="#8B7355" size="2px">
+
+        <div id="hienthisp">
+            {% for sp in SanPham %}
+                <div class="sanpham">
+                    <img class="anh-sp" src="{{sp.image.url}}">
+                    <p class="ten-sp">{{sp.tensp}}</p>
+                    <p class="gia-sp">{{sp.giasp}} VNĐ</p>
+                    <div class="act-sp">
+                        <button onclick="location.href='{% url 'chitietsanpham' sp.id %}'" class="btn-xct">Xem chi tiết</button>
+                        <button class="btn-tvgh">Thêm vào giỏ hàng</button>
+                    </div>
+                    <p class="id-sp" style="display:none">{{sp.id}}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% comment %} <div id="taithem">
+            <button id="btn-tt">TẢI THÊM</button>
+        </div> {% endcomment %}
+    </div>
+{% endblock %}
+
+
+{% block javascript %}
+    <script language="javascript" src="../../static/js/sanpham.js"></script>
+    <script language="javascript" src="../../static/js/header.js"></script>
+    <script language="javascript" src="../../static/js/giohang1.js"></script>
+{% endblock %}

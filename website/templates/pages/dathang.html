@@ -1,0 +1,108 @@
+{% extends "pages/base.html" %}
+
+
+{% block title %}
+    <title>Đặt hàng | Furniture | Nội thất phong cách Việt Nam</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/stylee.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/sanpham.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/dathang1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+{% endblock %}
+
+
+{% block content %}
+    <div id="content">
+        <div id="div-tdc">
+            <a class="tdc" href="{% url 'home' %}">Trang chủ</a>
+            <p class="tdc">></p>
+            <a class="tdc" href="{% url 'giohang' %}">Giỏ hàng</a>
+            <p class="tdc">></p>
+            <a class="tdc" href="{% url 'dathang' %}">Đặt hàng</a>
+        </div>
+        <p id="tsp">Đặt hàng</p>
+
+        <hr  width="100%" color="#8B7355" size="2px">
+
+        <div class="row1">
+            <form method="post" id="thongtin" action=".">
+                {% csrf_token %}
+                <div class="form-group">
+                    <p>Họ và tên</p>
+                    {% comment %} <input class="form-control" type="text" name="hoten" placeholder="Tôn Văn Hiệp" required> {% endcomment %}
+                    {{ f_dh.hoten }}
+                </div>
+                <div class="form-group">
+                    <p>Email</p>
+                    {% comment %} <input class="form-control" type="email" name="email" placeholder="tonvanhiepdragon@gmail.com" required> {% endcomment %}
+                    {{ f_dh.email }}
+                </div>
+                <div class="form-group">
+                    <p>Địa chỉ</p>
+                    {% comment %} <input class="form-control" type="text" name="diachi" placeholder="KTX B, Đông Hòa, Dĩ An, Bình Dương" required> {% endcomment %}
+                    {{ f_dh.diachi }}
+                </div>
+
+                <div class="form-group">
+                    <p>Số điện thoại</p>
+                    {% comment %} <input class="form-control" type="tel" name="sodt" placeholder="0363038485" required> {% endcomment %}
+                    {{ f_dh.sodt }}
+                </div>
+
+                <div class="duongke">
+                    <hr  width="100%" color="#8B7355" size="2px">
+                </div>
+
+
+                <div class="row2">
+                    <table>
+                        <tr>
+                          <td>Tổng tiền hàng</td>
+                          <td style="width:110px" id="tth">1000000</td>
+                        </tr>
+                        <tr>
+                          <td>Phí vận chuyện</td>
+                          <td id="ps">0</td>
+                        </tr>
+                        <tr>
+                          <td>Tổng số tiền</td>
+                          <td id="tst">1000000</td>
+                        </tr>
+                      </table>
+                </div>
+
+                <div class="duongke">
+                    <hr  width="100%" color="#8B7355" size="2px">
+                </div>
+                <div style="display:none;">
+                    {{ f_dh.tienhang }}
+                </div>
+                <div style="display:none;">
+                    {{ f_dh.phivanchuyen }}
+                </div>
+                <div style="display:none;">
+                    {{ f_dh.tongtien }}
+                </div>
+                <div style="display:none;">
+                    {{ f_dh.motadh }}
+                </div>
+                <input class="input" type="submit" value="Đặt hàng">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascript %}
+    <script language="javascript" src="../../static/js/header.js"></script>
+    <script language="javascript" src="../../static/js/giohang1.js"></script>
+    <script>
+        tongtiendonhang();
+        
+        var mota = '';
+        for (var i = 0; i < giohang.length; i++) {
+            mota = mota + '( idsp = ' + giohang[i][4] + '; tensp = \'' + giohang[i][1] + '\'; giasp = ' + giohang[i][2] + '\' sl= ' + giohang[i][3] +')   ||   ';
+        }
+        document.getElementById('id_motadh').setAttribute('value', mota);
+    </script>
+{% endblock %}

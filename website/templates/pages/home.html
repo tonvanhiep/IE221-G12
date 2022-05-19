@@ -1,0 +1,32 @@
+
+{% extends "pages/base.html" %}
+
+
+{% load static %}
+{% block title %}
+    <title>Furniture | Nội thất phong cách Việt Nam</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylee.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/trangchu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sanpham.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+{% endblock %}
+
+
+
+{% block content %}
+    <div id="banner">
+        <img src="../../static/images/banner.jpg">
+        <div id="text">
+            <p id="pcshd">PHONG CÁCH HIỆN ĐẠI</p>
+            <a id="btn-xsp" href="./sanpham/">XEM SẢN PHẨM >></a>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block javascript %}
+    <script language="javascript" src="../../static/js/giohang.js"></script>
+    <script language="javascript" src="../../static/js/header.js"></script>
+{% endblock %}

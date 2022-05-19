@@ -1,0 +1,141 @@
+{% extends "pages/base.html" %}
+
+
+{% block title %}
+    <title>{{SanPham.tensp}} | Furniture | Nội thất phong cách Việt Nam</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/stylee.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/chitietsanpham.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+{% endblock %}
+
+
+{% block content %}
+    <div id="content">
+        <div id="div-tdc">
+            <a class="tdc" href="{% url 'home' %}">Trang chủ</a>
+            <p class="tdc">></p>
+            <a class="tdc" href="#">{{SanPham.tensp}}</a>
+        </div>
+
+        <div id="chitietsp">
+            <div id="header-chitiet">
+                
+                <div id="div-anh-sp">
+                    <img src="{{ SanPham.image.url}}">
+                </div>
+                
+                <div id="header-noidung">
+                    <p id="ten-sp">{{ SanPham.tensp}}</p>
+                    <p id="gia-sp">{{ SanPham.giasp }} VNĐ</p>
+
+                    <hr  width="100%" color="#8B7355" size="2px">
+
+
+                    <div >
+                        <p>{{ SanPham.thongtin|safe|linebreaks}}</p>
+                    </div>
+                    <div id="btn-mh">
+                        <button id="btn-tvgh">THÊM VÀO GIỎ HÀNG</button>
+                        <button id="btn-mn">MUA NGAY</button>
+                    </div>
+                    <p id="id-sp" style="display:none">{{ SanPham.id}}</p>
+                </div>
+            </div>
+
+            <hr  width="100%" color="#8B7355" size="2px">
+
+            <div id="danhmuc">
+                <button id="mota">Mô tả</button>
+                <button id="danhgia">Đánh giá</button>
+            </div>
+
+            <hr  width="100%" color="#8B7355" size="2px">
+
+            <div id="mota-sp">
+                <p>{{ SanPham.mota|safe|linebreaks}}</p>
+            </div>
+
+            <div id="danhgia-sp">
+                <div id="div-danhgia">
+                    <p id="dgsp">ĐÁNH GIÁ SẢN PHẨM</p>
+                    {% for bl in BinhLuan %}
+                        <div class="comment">
+                            <div class="ava-danhgia">
+                                <img src="../../static/images/user-danhgia.png">
+                            </div>
+                            <div class="tt-danhgia">
+                                <p>{{ bl.hoten}}</p>
+                                <p>{{ bl.ngaytao|date:"d-m-Y" }} | {{ bl.ngaytao|date:"h:m:s" }}</p>
+                            </div>
+                            <p class="nd-danhgia">{{ bl.noidung }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                {% comment %} <div id="themdanhgia">
+                    <p id="dgsp">THÊM ĐÁNH GIÁ SẢN PHẨM</p>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="form">
+                            <input id="hoten" required type="text" placeholder="Họ tên" maxlength="50" name="hoten">
+                        </div>
+                        <div class="form">
+                            <input id="email" required type="email" placeholder="Email" maxlength="50" name="email">
+                        </div>
+                        <div class="form">
+                            <textarea id="baidanhgia" required placeholder="Bài đánh giá" name="danhgia"></textarea>
+                        </div>
+                        <div class="form">
+                            <input id="submit-danhgia" type="submit" value="SUBMIT">
+                        </div>
+                    </form>
+                </div> {% endcomment %}
+
+                <div id="themdanhgia">
+                    <p id="dgsp">THÊM ĐÁNH GIÁ SẢN PHẨM</p>
+                    <form method="post" action="{{SanPham.id}}">
+                        {% csrf_token %}
+                        <div class="form">
+                            {{ f_cmm.hoten }}
+                        </div>
+                        <div class="form">
+                            {{ f_cmm.email }}
+                        </div>
+                        <div class="form">
+                            {{ f_cmm.noidung }}
+                        </div>
+                        <div class="form" style="display:none">
+                            {{ f_cmm.idsp }}
+                        </div>
+                        <div class="form">
+                            <input id="submit-danhgia" type="submit" value="SUBMIT">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <hr  width="100%" color="#8B7355" size="2px">
+
+        <div id="sptuongtu">
+            <p>Sản phẩm tương tự</p>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascript %}
+    <script language="javascript" src="../../static/js/giohang1.js"></script>
+    <script language="javascript" src="../../static/js/header.js"></script>
+    <script language="javascript" src="../../static/js/chitietsanpham.js"></script>
+    <script>
+        document.getElementById("btn-mn").onclick = function() {
+            themvaogiohang_ctsp(this);
+            location.href = "{% url 'dathang' %}";
+        }
+        document.getElementById('id_idsp').setAttribute('value', '{{SanPham.id}}');
+    </script>
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% extends "pages/base.html" %}
+
+
+{% block title %}
+    <title>Đặt hàng thành công | Furniture | Nội thất phong cách Việt Nam</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/stylee.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/dathang1.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/sanpham.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+{% endblock %}
+
+
+{% block content %}
+    <div id='thanks'>
+        <h1>Cảm ơn quý khách</h1>
+    </div>
+{% endblock %}
+
+
+{% block javascript %}
+    <script language="javascript" src="../../static/js/giohang.js"></script>
+    <script language="javascript" src="../../static/js/header.js"></script>
+    <script language="javascript" src="../../static/js/sanpham.js"></script>
+    <script>
+        giohang.length = 0;
+        luugiohang();
+        capnhatslgiohang();
+    </script>
+{% endblock %}

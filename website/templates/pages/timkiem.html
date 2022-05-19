@@ -1,0 +1,320 @@
+{% extends "pages/base.html" %}
+
+
+{% block title %}
+    <title>Tìm kiếm sản phẩm | Furniture | Nội thất phong cách Việt Nam</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/stylee.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/sanpham.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+{% endblock %}
+
+
+{% block content %}
+    <div id="content">
+        <div id="div-tdc">
+            <a class="tdc" href="{% url 'home' %}">Trang chủ</a>
+            <p class="tdc">></p>
+            <a class="tdc" href="{% url 'timkiem' %}">Tìm kiếm</a>
+        </div>
+        <p id="tsp">Kết quả tìm kiếm : "{{ query }}"</p>
+
+        <hr  width="100%" color="#8B7355" size="2px">
+
+        {% comment %} <div id="div-sx">
+            <div id="sx">
+                <button id="btn-sx">Thứ tự mặc định</button>
+                <div class="noidung_dropdown">
+                    <a href="">Mới cập nhật</a>
+                    <a href="">Giá thấp cao</a>
+                    <a href="">Giá cao đến thấp</a>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+        <div id="hienthisp">
+            {% comment %} <div class="sanpham">
+                <img class="anh-sp" src="../../static/images/bantra.jpg">
+                <p class="ten-sp">Bàn trà</p>
+                <p class="gia-sp">880000 VNĐ</p>
+                <div class="act-sp">
+                    <button onclick="location.href='{% url 'chitietsanpham' %}'" class="btn-xct">Xem chi tiết</button>
+                    <button class="btn-tvgh">Thêm vào giỏ hàng</button>
+                </div>
+            </div> {% endcomment %}
+            {% for sp in SanPham %}
+                <div class="sanpham">
+                    <img class="anh-sp" src="{{sp.image.url}}">
+                    <p class="ten-sp">{{sp.tensp}}</p>
+                    <p class="gia-sp">{{sp.giasp}} VNĐ</p>
+                    <div class="act-sp">
+                        <button onclick="location.href='{% url 'chitietsanpham' sp.id %}'" class="btn-xct">Xem chi tiết</button>
+                        <button class="btn-tvgh">Thêm vào giỏ hàng</button>
+                    </div>
+                    {% comment %} <p class="id-sp">{{sp.id}}</p> {% endcomment %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% comment %} <div id="taithem">
+            <button id="btn-tt">TẢI THÊM</button>
+        </div> {% endcomment %}
+    </div>
+{% endblock %}
+
+
+{% block javascript %}
+    <script language="javascript" src="../../static/js/giohang.js"></script>
+    <script language="javascript" src="../../static/js/header.js"></script>
+    <script language="javascript" src="../../static/js/sanpham.js"></script>
+{% endblock %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm sản phẩm | Furniture | Nội thất phong cách Việt Nam</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/stylee.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/sanpham.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Dongle:wght@300&family=Quicksand:wght@300&family=Send+Flowers&family=Varela+Round&display=swap" rel="stylesheet">
+</head> {% endcomment %}
+{% comment %} <body>
+    <header id="header">
+        <div id="lhead">
+            <a href="./"><img src="../../static/images/image.png"></a>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">PHÒNG KHÁCH</a>
+                        <div class="dropdown-content">
+                          <a href="#">Sofa & Đôn</a>
+                          <a href="#">Bàn trà</a>
+                          <a href="#">Tủ Tivi</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">PHÒNG NGỦ</a>
+                        <div class="dropdown-content">
+                          <a href="#">Giường ngủ</a>
+                          <a href="#">Tủ đầu giường</a>
+                          <a href="#">Tủ áo cánh mở</a>
+                          <a href="#">Bàn trang điểm</a>
+                          <a href="#">Kệ trang trí</a>
+                          <a href="#">Bàn làm việc</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">PHÒNG ĂN</a>
+                        <div class="dropdown-content">
+                          <a href="#">Bàn ăn</a>
+                          <a href="#">Ghế ăn</a>
+                        </div>
+                    </li>
+                    <li><a href="#">THIẾT KẾ</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="rhead">
+            <ul>
+                <li><a href="#" id="btn-search"><img class="icon-header" src="../../static/images/search.png" alt="search"></a></li>
+                <li class="dropdown">
+                    <a href="./dangnhap.html"><img class="icon-header dropdown" src="../../static/images/account.png" alt="me"></a>
+                    <div class="dropdown-content">
+                      <a href="#" style="text-decoration: none;">Đăng xuất</a>
+                    </div>
+                </li>
+                <li><a href="./danhsachyeuthich.html"><img class="icon-header" src="../../static/images/heart.png" alt="favourite"></a></li>
+                <li>
+                    <a href="./giohang.html"><img class="icon-header" src="../../static/images/shopping-cart.png" alt="cart"></a>
+                    <div id="sosp">
+                        <p>0</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <div id="timkiem">
+        <button id="close-search">X</button>
+        <p>Bạn muốn tìm kiếm sản phẩm nào?</p>
+        <form method="get" action="./timkiem.html">
+            <div id="div-input">
+                <input id="input-search" type="search" required placeholder="Tủ đầu giường" name="sp">
+                <input id="submit-search" type="submit" value="Tìm kiếm">
+            </div>
+        </form>
+    </div>
+
+    <div id="tvgh-tc">
+        <p>Sản phẩm đã được thêm vào giỏ hàng thành công!!!</p>
+    </div>
+
+    <div id="content">
+        <div id="div-tdc">
+            <a class="tdc" href="./">Trang chủ</a>
+            <p class="tdc">></p>
+            <a class="tdc" href="#">TÌm kiếm</a>
+        </div>
+        <p id="tsp">Kết quả tìm kiếm : "..."</p>
+
+        <hr  width="100%" color="#8B7355" size="2px">
+
+        <div id="div-sx">
+            <div id="sx">
+                <button id="btn-sx">Thứ tự mặc định</button>
+                <div class="noidung_dropdown">
+                    <a href="">Mới cập nhật</a>
+                    <a href="">Giá thấp cao</a>
+                    <a href="">Giá cao đến thấp</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="hienthisp">
+            <div class="sanpham">
+                <img class="anh-sp" src="../../static/images/bantra.jpg">
+                <p class="ten-sp">Bàn trà</p>
+                <p class="gia-sp">880000 VNĐ</p>
+                <div class="act-sp">
+                    <button onclick="location.href='./chitietsanpham.html'" class="btn-xct">Xem chi tiết</button>
+                    <button class="btn-tvgh">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="sanpham">
+                <img class="anh-sp" src="../../static/images/bantra.jpg">
+                <p class="ten-sp">Bàn trà</p>
+                <p class="gia-sp">880000 VNĐ</p>
+                <div class="act-sp">
+                    <button onclick="location.href='./chitietsanpham.html'" class="btn-xct">Xem chi tiết</button>
+                    <button class="btn-tvgh">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="taithem">
+            <button id="btn-tt">TẢI THÊM</button>
+        </div>
+    </div>
+
+    <footer>
+        <table border="0">
+            <tr>
+                <th colspan="5"><br></th>
+            </tr>
+            <tr>
+                <td>
+                    &emsp;&emsp;&emsp;
+                </td>
+                <td><b>VỀ CHÚNG TÔI</b></td>
+                <td>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                </td>
+                <td>
+                    <b>CHÍNH SÁCH</b>
+                </td>
+                <td>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                </td>
+                <td>
+                   <b>LIÊN HỆ</b>                  
+                </td>
+            </tr>
+            <tr>
+                <th colspan="5"><br></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                </td>
+                <td>
+                    <a class="duongdan" href="#">Hướng dẫn mua hàng</a>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <b>Cửa hàng:</b> 
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                </td>
+                <td>
+                    <a class="duongdan" href="#">Chính sách bảo mật</a>
+                </td>
+                <td>
+                </td>
+                <td>
+                    798 Xa Lộ Hà Nội, Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh                
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                </td>
+                <td>
+                    <a class="duongdan" href="#">Quy định bảo hành, đổi trả</a>
+                </td>
+                <td>
+                </td>
+                <td>
+                    Số điện thoại: 0339387539                   
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                </td>
+                <td>
+                    <a class="duongdan" href="#">Khách hàng thân thiết</a>
+                </td>
+                <td>
+                </td>
+                <td>
+                    Email: 19522441@gm.uit.edu.vn                                   
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <b>Công ty:</b> <br>
+                    Tầng 36 Bitexco, 02 Hải Triều, Quận 1, Tp.Hồ Chí Minh                  
+                </td>
+            </tr>
+        </table>
+
+        <div class="rowf2">
+            <div class="container-fluid2">
+                <a href="https://www.facebook.com/profile.php?id=100013418984023" ><h1 class="fa fa-facebook"> Facebook</h1></a> | &nbsp;
+                <a href="#" ><h1 class="fa fa-instagram"> Instagram</h1></a> | &nbsp;
+                <a href="#" ><h1 class="fa fa-youtube"> Youtube</h1></a>
+            </div>
+        </div>
+    </footer>
+
+    <script language="javascript" src="../../static/js/giohang.js"></script>
+    <script language="javascript" src="../../static/js/header.js"></script>
+    <script language="javascript" src="../../static/js/sanpham.js"></script>
+</body>
+</html> {% endcomment %}
